@@ -44,10 +44,9 @@ public class StringCalculatorTest {
 		assertEquals(117, sum);
 	}
 
-	@Test
+	@Test(expected = IllegalArgumentException.class)
 	public void testnegativeNumberSum() {
 		int sum = stringCalculator.add("4,8,8,5,2,11,23,-1,-6,56,-8");
-		assertEquals(102, sum);
 	}
 
 	@Test
@@ -56,10 +55,9 @@ public class StringCalculatorTest {
 		assertEquals(12, sum);
 	}
 
-	@Test
+	@Test(expected = NumberFormatException.class)
 	public void testNewLineAtEnd() {
 		int sum = stringCalculator.add("4,\n");
-		assertEquals(0, sum);
 	}
 
 	@Test
@@ -67,7 +65,7 @@ public class StringCalculatorTest {
 		int sum = stringCalculator.add("//;\n1;2");
 		assertEquals(3, sum);
 	}
-	
+
 	@Test
 	public void testNewDelimiter2() {
 		int sum = stringCalculator.add("//~~\n1~~2");
