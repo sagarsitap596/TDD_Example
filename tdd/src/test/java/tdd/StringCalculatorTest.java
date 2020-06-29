@@ -72,4 +72,10 @@ public class StringCalculatorTest {
 		assertEquals(3, sum);
 	}
 
+	@Test
+	public void testIgnoreGreaterThan1000() {
+		int sum = stringCalculator.add("2,1001");
+		assertEquals(2, sum);
+	}
+
 }

@@ -18,10 +18,10 @@ public class StringCalculator {
 		StringBuilder negativeNumbers = new StringBuilder();
 		for (String n : numbers.split(delimiter)) {
 			int num = Integer.parseInt(n);
-			if (num > 0) {
-				sum = sum + num;
-			} else {
+			if (num < 0) {
 				negativeNumbers.append(num + "  ");
+			} else if (num <= 1000) {
+				sum = sum + num;
 			}
 
 		}
