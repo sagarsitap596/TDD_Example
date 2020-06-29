@@ -67,15 +67,21 @@ public class StringCalculatorTest {
 	}
 
 	@Test
-	public void testNewDelimiter2() {
-		int sum = stringCalculator.add("//~~\n1~~2");
-		assertEquals(3, sum);
-	}
-
-	@Test
 	public void testIgnoreGreaterThan1000() {
 		int sum = stringCalculator.add("2,1001");
 		assertEquals(2, sum);
 	}
+
+	@Test
+	public void testMultiLengthDelimiter() {
+		int sum = stringCalculator.add("//[***]\n1***2***3");
+		assertEquals(6, sum);
+	}//[*][%]\n1*2%3
+	
+	@Test
+	public void testMultipleDelimiter() {
+		int sum = stringCalculator.add("//[*][%]\n1*2%3");
+		assertEquals(6, sum);
+	}//[*][%]\n1*2%3
 
 }
