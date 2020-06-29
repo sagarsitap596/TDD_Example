@@ -32,4 +32,22 @@ public class StringCalculatorTest {
 		assertEquals(12, sum);
 	}
 
+	@Test
+	public void testThreeNumberSum() {
+		int sum = stringCalculator.add("4,8,8");
+		assertEquals(20, sum);
+	}
+
+	@Test
+	public void testEightNumberSum() {
+		int sum = stringCalculator.add("4,8,8,5,2,11,23,56");
+		assertEquals(117, sum);
+	}
+
+	@Test
+	public void testnegativeNumberSum() {
+		int sum = stringCalculator.add("4,8,8,5,2,11,23,-1,-6,56,-8");
+		assertEquals(102, sum);
+	}
+
 }
