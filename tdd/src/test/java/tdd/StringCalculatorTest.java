@@ -50,4 +50,16 @@ public class StringCalculatorTest {
 		assertEquals(102, sum);
 	}
 
+	@Test
+	public void testNewLineBetweenNumbers() {
+		int sum = stringCalculator.add("4\n,8");
+		assertEquals(12, sum);
+	}
+
+	@Test
+	public void testNewLineAtEnd() {
+		int sum = stringCalculator.add("4,\n");
+		assertEquals(0, sum);
+	}
+
 }

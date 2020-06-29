@@ -8,8 +8,13 @@ public class StringCalculator {
 		if (Objects.isNull(numbers) || numbers.trim().isEmpty())
 			return 0;
 		int sum = 0;
-		for (String n : numbers.split(",")) {
-			sum = sum + Integer.parseInt(n);
+		try {
+			numbers = numbers.replace("\n,", ",");
+			for (String n : numbers.split(",")) {
+				sum = sum + Integer.parseInt(n);
+			}
+		} catch (Exception e) {
+			return 0;
 		}
 		return sum;
 	}
