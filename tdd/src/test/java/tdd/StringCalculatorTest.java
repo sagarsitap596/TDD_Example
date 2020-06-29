@@ -62,4 +62,16 @@ public class StringCalculatorTest {
 		assertEquals(0, sum);
 	}
 
+	@Test
+	public void testNewDelimiter() {
+		int sum = stringCalculator.add("//;\n1;2");
+		assertEquals(3, sum);
+	}
+	
+	@Test
+	public void testNewDelimiter2() {
+		int sum = stringCalculator.add("//~~\n1~~2");
+		assertEquals(3, sum);
+	}
+
 }
